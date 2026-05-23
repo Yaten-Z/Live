@@ -1,12 +1,13 @@
-import { Github, Mail } from 'lucide-react';
+import { Github, Mail, MessageCircle } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
 
   const socialLinks = [
-    { icon: Github, href: 'https://github.com', label: 'GitHub' },
-    { icon: Mail, href: 'mailto:your.email@example.com', label: '邮箱' },
+    { icon: Github, href: 'https://github.com/Yaten-Z', label: 'GitHub' },
+    { icon: Mail, href: 'mailto:Yaten-Z@outlook.com', label: '邮箱' },
+    { icon: MessageCircle, href: 'https://qm.qq.com/q/dZqkHweSOW', label: 'QQ' },
   ];
 
   return (
