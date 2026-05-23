@@ -1,4 +1,4 @@
-import { Link, useLocation } from 'react-router-dom';
+import { Link, useRouterState } from '@tanstack/react-router';
 import { Menu, X } from 'lucide-react';
 import { useState, useEffect } from 'react';
 import ThemeToggle from './ThemeToggle';
@@ -6,7 +6,8 @@ import ThemeToggle from './ThemeToggle';
 export default function Header() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-  const location = useLocation();
+  const routerState = useRouterState();
+  const currentPath = routerState?.location?.pathname || '';
 
   useEffect(() => {
     const handleScroll = () => {
@@ -42,7 +43,7 @@ export default function Header() {
                 key={link.to}
                 to={link.to}
                 className={`text-sm font-medium transition-colors ${
-                  location.pathname === link.to
+                  currentPath === link.to
                     ? 'text-gray-900 dark:text-white'
                     : 'text-gray-500 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white'
                 }`}
@@ -75,7 +76,7 @@ export default function Header() {
                 to={link.to}
                 onClick={() => setIsMobileMenuOpen(false)}
                 className={`text-2xl font-serif transition-colors ${
-                  location.pathname === link.to
+                  currentPath === link.to
                     ? 'text-gray-900 dark:text-white'
                     : 'text-gray-500 dark:text-gray-400'
                 }`}

@@ -1,15 +1,11 @@
 import { Clock } from 'lucide-react';
-import Header from '../components/Header';
-import Footer from '../components/Footer';
 import MomentCard from '../components/MomentCard';
 import { moments } from '../data/moments';
 
 export default function Moments() {
   return (
-    <div className="min-h-screen flex flex-col">
-      <Header />
-
-      <main className="flex-1 pt-32 pb-16">
+    <div className="min-h-screen">
+      <main className="pt-32 pb-16">
         <div className="container mx-auto px-6 max-w-6xl">
           <div className="text-center mb-12">
             <h1 className="font-serif text-4xl font-bold text-gray-900 dark:text-white mb-4">
@@ -36,8 +32,6 @@ export default function Moments() {
           )}
         </div>
       </main>
-
-      <Footer />
     </div>
   );
 }

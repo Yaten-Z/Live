@@ -1,10 +1,9 @@
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import Home from './pages/Home';
-import Moments from './pages/Moments';
-import MomentDetail from './pages/MomentDetail';
-import { Link } from 'react-router-dom';
+import { Outlet } from '@tanstack/react-router';
+import Header from './components/Header';
+import Footer from './components/Footer';
 
 function NotFound() {
+  const { Link } = require('@tanstack/react-router');
   return (
     <div className="min-h-screen flex items-center justify-center">
       <div className="text-center">
@@ -24,13 +23,14 @@ function NotFound() {
 
 export default function App() {
   return (
-    <Router>
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/moments" element={<Moments />} />
-        <Route path="/moment/:id" element={<MomentDetail />} />
-        <Route path="*" element={<NotFound />} />
-      </Routes>
-    </Router>
+    <div className="min-h-screen bg-white dark:bg-gray-900">
+      <Header />
+      <main>
+        <Outlet />
+      </main>
+      <Footer />
+    </div>
   );
 }
+
+export { NotFound };

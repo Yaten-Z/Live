@@ -1,16 +1,12 @@
-import { Link } from 'react-router-dom';
+import { Link } from '@tanstack/react-router';
 import { ArrowRight } from 'lucide-react';
-import Header from '../components/Header';
-import Footer from '../components/Footer';
 import MomentCard from '../components/MomentCard';
 import { recentMoments, author } from '../data/moments';
 
 export default function Home() {
   return (
-    <div className="min-h-screen flex flex-col">
-      <Header />
-
-      <main className="flex-1 pt-32">
+    <div className="min-h-screen">
+      <main className="pt-32">
         <section className="py-16">
           <div className="container mx-auto px-6 max-w-4xl">
             <div className="flex flex-col md:flex-row items-start md:items-center gap-8 mb-16">
@@ -53,8 +49,6 @@ export default function Home() {
           </div>
         </section>
       </main>
-
-      <Footer />
     </div>
   );
 }

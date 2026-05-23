@@ -1,13 +1,13 @@
-import { useParams, Link } from 'react-router-dom';
+import { useLocation, Link } from '@tanstack/react-router';
 import { ArrowLeft, Calendar, Tag } from 'lucide-react';
 import { moments } from '../data/moments';
-import Header from '../components/Header';
-import Footer from '../components/Footer';
 import ImageGrid from '../components/ImageGrid';
 import GiscusComments from '../components/GiscusComments';
 
 export default function MomentDetail() {
-  const { id } = useParams<{ id: string }>();
+  const location = useLocation();
+  const pathParts = location.pathname.split('/');
+  const id = pathParts[pathParts.length - 1];
   const moment = moments.find((m) => m.id === id);
 
   if (!moment) {
@@ -35,10 +35,8 @@ export default function MomentDetail() {
   });
 
   return (
-    <div className="min-h-screen flex flex-col">
-      <Header />
-
-      <main className="flex-1 pt-32 pb-16">
+    <div className="min-h-screen">
+      <main className="pt-32 pb-16">
         <div className="container mx-auto px-6 max-w-4xl">
           <div className="mb-8">
             <Link
@@ -108,8 +106,6 @@ export default function MomentDetail() {
           </article>
         </div>
       </main>
-
-      <Footer />
     </div>
   );
 }

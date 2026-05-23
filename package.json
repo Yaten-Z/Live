@@ -11,7 +11,12 @@
     "check": "tsc -b --noEmit"
   },
   "dependencies": {
+    "@fortawesome/fontawesome-svg-core": "^7.2.0",
+    "@fortawesome/free-solid-svg-icons": "^7.2.0",
+    "@fortawesome/react-fontawesome": "^3.3.1",
     "@giscus/react": "^3.1.0",
+    "@tanstack/react-router": "^1.170.7",
+    "@tanstack/router-devtools": "^1.167.0",
     "clsx": "^2.1.1",
     "framer-motion": "^12.40.0",
     "gh-pages": "^6.3.0",
@@ -19,7 +24,6 @@
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "react-photo-view": "^1.2.7",
-    "react-router-dom": "^7.3.0",
     "tailwind-merge": "^3.0.2",
     "zustand": "^5.0.3"
   },

@@ -1,14 +1,10 @@
-import { Github, Mail, MessageCircle } from 'lucide-react';
-import { Link } from 'react-router-dom';
+import { Github, Mail } from 'lucide-react';
+import { Link } from '@tanstack/react-router';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faMessage } from '@fortawesome/free-solid-svg-icons';
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
-
-  const socialLinks = [
-    { icon: Github, href: 'https://github.com/Yaten-Z', label: 'GitHub' },
-    { icon: Mail, href: 'mailto:Yaten-Z@outlook.com', label: '邮箱' },
-    { icon: MessageCircle, href: 'https://qm.qq.com/q/dZqkHweSOW', label: 'QQ' },
-  ];
 
   return (
     <footer className="border-t border-gray-200 dark:border-gray-800 mt-24">
@@ -44,21 +40,33 @@ export default function Footer() {
           <div className="space-y-4">
             <h4 className="font-medium text-gray-900 dark:text-white">联系方式</h4>
             <div className="flex space-x-4">
-              {socialLinks.map((social) => {
-                const Icon = social.icon;
-                return (
-                  <a
-                    key={social.label}
-                    href={social.href}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="w-10 h-10 border border-gray-200 dark:border-gray-700 flex items-center justify-center hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors"
-                    aria-label={social.label}
-                  >
-                    <Icon size={18} className="text-gray-700 dark:text-gray-300" />
-                  </a>
-                );
-              })}
+              <a
+                href="https://github.com/Yaten-Z"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-10 h-10 border border-gray-200 dark:border-gray-700 flex items-center justify-center hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors"
+                aria-label="GitHub"
+              >
+                <Github size={18} className="text-gray-700 dark:text-gray-300" />
+              </a>
+              <a
+                href="mailto:Yaten-Z@outlook.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-10 h-10 border border-gray-200 dark:border-gray-700 flex items-center justify-center hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors"
+                aria-label="邮箱"
+              >
+                <Mail size={18} className="text-gray-700 dark:text-gray-300" />
+              </a>
+              <a
+                href="https://qm.qq.com/q/dZqkHweSOW"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-10 h-10 border border-gray-200 dark:border-gray-700 flex items-center justify-center hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors"
+                aria-label="QQ"
+              >
+                <FontAwesomeIcon icon={faMessage} size="lg" className="text-gray-700 dark:text-gray-300" />
+              </a>
             </div>
           </div>
         </div>
